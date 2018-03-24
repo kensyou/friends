@@ -8,7 +8,6 @@ import { AngularFireDatabase } from 'angularfire2/database';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NotFoundComponent } from './not-found/not-found.component';
-import { LoginComponent } from './login/login.component';
 import { AuthenticationModule } from './authentication/authentication.module';
 import { environment } from '../environments/environment';
 import { AuthenticationService } from './services/authentication.service';
@@ -18,7 +17,6 @@ import { UserModule } from './user/user.module';
   declarations: [
     AppComponent,
     NotFoundComponent,
-    LoginComponent,
   ],
   imports: [
     BrowserModule,
@@ -28,7 +26,7 @@ import { UserModule } from './user/user.module';
     AppRoutingModule,
     UserModule,
   ],
-  providers: [ AngularFireAuth, AngularFireDatabase, AuthenticationService],
+  providers: [AngularFireAuth, AngularFireDatabase, AuthenticationService],
   bootstrap: [AppComponent],
   schemas: []
 })

@@ -27,7 +27,6 @@ export class LoginComponent implements OnInit {
   ngOnInit() {
   }
   onLogin(loginFormData): void {
-    debugger;
     this.authService.login(loginFormData.value.email,
       loginFormData.value.password).then((userInfo) => {
         // Login user
@@ -41,11 +40,15 @@ export class LoginComponent implements OnInit {
   private getUserInfo(uid: string) {
     this.userService.getUser(uid).subscribe(snapshot => {
       this.user = snapshot;
+      this.userService.saveUser(this.user);
+      this.navigateToUserProfile();
     });
   }
+  private navigateToUserProfile() {
+    this.router.navigateByUrl('/app-friends-userprofile');
+  }
   onReset(resetFormData): void {
-    this.authService.resetPassword(resetFormData.value.email).then(() =>   
-    {
+    this.authService.resetPassword(resetFormData.value.email).then(() => {
       alert('Reset instruction sent to your mail');
     }).catch((error) => {
       this.errorMessage = error.message;

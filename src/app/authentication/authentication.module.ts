@@ -5,7 +5,7 @@ import { AuthenticationRoutingModule } from './authentication-routing.module';
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
 import { AuthenticationService } from '../services/authentication.service'
-import { PasswordEqualValidator } from './password-equal-validator';
+import { PasswordEqualValidator } from '../utils/password-equal-validator';
 import { UserService } from '../services/user.service';
 import { ErrorAlertComponent } from '../error-alert/error-alert.component';
 
